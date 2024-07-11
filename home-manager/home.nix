@@ -11,11 +11,19 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      };
+  };
+
   home.packages = [
     # Hyprland packages
     pkgs.hyprpaper
     pkgs.waybar
     pkgs.wofi
+    pkgs.hyprshot
 
     # Fonts
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
@@ -32,6 +40,7 @@
     pkgs.kitty
     pkgs.keepassxc
     pkgs.texliveFull
+    pkgs.spotify
   ];
 
   programs = {
@@ -73,7 +82,7 @@
             spacing = 5;
             reload_style_on_change = true;
 
-            modules-left = [ "hyprland/workspaces" ];
+            modules-left = [ "hyprland/workspaces" "tray" ];
             modules-center = [ "hyprland/window" ];
             modules-right = [ "clock" ];
             
