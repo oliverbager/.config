@@ -33,6 +33,12 @@
     pkgs.unzip
     pkgs.zip
 
+    # Programming
+    pkgs.rustc
+    pkgs.cargo
+    pkgs.python3
+    pkgs.julia
+
     # Other
     pkgs.zathura
     pkgs.vesktop
@@ -41,6 +47,7 @@
     pkgs.keepassxc
     pkgs.texliveFull
     pkgs.spotify
+    pkgs.geogebra
   ];
 
   programs = {
